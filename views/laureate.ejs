@@ -1,0 +1,29 @@
+<% include partials/header %>
+<h1>Add Laureate</h1>
+<form method="POST" action="/laureates/add">
+  <label>First Name</label><br>
+  <input type="text" name="name">
+  <br>
+  <label>Date of Birth</label><br>
+  <input type="text" name="born">
+  <br>
+  <label>Date of Death</label><br>
+  <input type="text" name="died">
+  <br><br>
+  <input type="submit" name="Submit">
+</form>
+<form method="DELETE" action="/laureates/delete">
+  <label>First Name</label><br>
+  <input type="text" name="del_name">
+  <br><br>
+  <input type="submit" name="Delete">
+  <br>
+</form>
+<h1><%= title %></h1>
+<ul>
+<% users.forEach(function(user){%>
+  <li>ID: <%= user.id %><br>Name:<%= user.name %><br>
+  Born: <%= user.birth %><br>Died:<%= user.death %><br></li>
+<% }) %>
+</ul>
+<% include partials/footer %>
